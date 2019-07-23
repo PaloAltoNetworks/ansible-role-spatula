@@ -3,6 +3,15 @@ spatula
 
 This Ansible role applies security best practice templates to Palo Alto Networks devices.
 
+Purpose
+=======
+
+This role leverages the [Iron Skillet](https://iron-skillet.readthedocs.io/en/panos_v8.1/index.html) best practice templates to ensure that PAN-OS firewalls are configured in accordance with Palo Alto Networks [best practice recommendations](https://www.paloaltonetworks.com/documentation/best-practices).  These templates are downloaded from the following GitHub repo when the playbook is executed and applied to each device or to a Panorama management console.
+
+- https://github.com/PaloAltoNetworks/iron-skillet
+
+A [Best Practices Assessment](https://www.paloaltonetworks.com/services/bpa) may be run following the application of these templates in order to gauge the effectiveness of the resulting configuration.
+
 Requirements
 ------------
 
@@ -93,7 +102,7 @@ The following are examples of Ansible playbooks that leverage this role to apply
     - panorama_vars.yml
       
   roles:
-    - role: paloaltonetworks.spatula
+    - role: stealthllama.spatula
 ```
 
 *Firewall:*
@@ -115,7 +124,7 @@ The following are examples of Ansible playbooks that leverage this role to apply
     - fw_vars.yml
       
   roles:
-    - role: paloaltonetworks.spatula
+    - role: stealthllama.spatula
 ```
 
 License

@@ -1,6 +1,12 @@
 ---
 # defaults file for spatula-panos
 
+# Panorama or firewall
+device_type: 'panorama'
+
+# Template version
+template_version: 'panos_v9.0'
+
 # Panorama management interface config
 CONFIG_PANORAMA_IP: 'yes'
 
