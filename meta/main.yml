@@ -16,4 +16,4 @@ galaxy_info:
     - panorama
 
 dependencies:
-  - paloaltonetworks.paloaltonetworks
+  - PaloAltoNetworks.paloaltonetworks
