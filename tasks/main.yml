@@ -14,4 +14,4 @@
     snippet_dir: 'files/templates/{{ device_type }}/snippets'
 
 - name: Build task list
-  include_tasks: '(( device_type )).yml'
+  include_tasks: '{{ device_type }}.yml'

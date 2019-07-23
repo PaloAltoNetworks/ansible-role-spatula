@@ -22,7 +22,7 @@ The variables used in this role are listed in the table below, along with defaul
 | device_type | panorama,panos | panorama | x | x | Panorama or firewall config |
 | template_version | panos_v9.0,panos_v8.1,panos_v8.0 | panos_v9.0 | x | x | Template version |
 | CONFIG_PANORAMA_IP | yes,no | yes | x |  | Panorama management interface config |
-| PANORAMA_TYPE | static,dhcp | static | x |  | Panorama management IP type |
+| PANORAMA_TYPE | static,cloud | static | x |  | Panorama management IP type |
 | PANORAMA_NAME | string | panorama01 | x |  | Panorama hostname |
 | PANORAMA_IP | string | 192.168.55.7 | x |  | Panorama IP |
 | PANORAMA_MASK | string | 255.255.255.0 | x |  | Panorama netmask |
