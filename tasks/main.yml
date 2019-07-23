@@ -1,0 +1,17 @@
+---
+# tasks file for spatula (main)
+
+- name: Download the latest templates
+  git:
+    repo: 'https://github.com/PaloAltoNetworks/iron-skillet.git'
+    dest: '{{ playbook_dir }}/files'
+    version: '{{ template_version }}'
+  tags:
+  - always
+
+- name: Set the template path
+  set_fact: 
+    snippet_dir: 'files/templates/{{ device_type }}/snippets'
+
+- name: Build task list
+  include_tasks: '(( device_type )).yml'

@@ -1,0 +1,314 @@
+---
+# tasks file for spatula (panos)
+    
+- name: device_system
+  vars:
+    snippet_file: "device_system.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_system
+
+- name: device_setting
+  vars:
+    snippet_file: "device_setting.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_setting
+
+- name: device_mgt_config
+  vars:
+    snippet_file: "device_mgt_config.xml"
+    snippet_xpath: "/config/mgt-config"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_mgt_config
+
+- name: shared_log_settings
+  vars:
+    snippet_file: "shared_log_settings.xml"
+    snippet_xpath: "/config/shared/log-settings"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_log_settings
+
+- name: address
+  vars:
+    snippet_file: "address.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - address
+
+- name: external_list
+  vars:
+    snippet_file: "external_list.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - external_list
+
+- name: tag
+  vars:
+    snippet_file: "tag.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - tag
+
+- name: log_settings_profiles
+  vars:
+    snippet_file: "log_settings_profiles.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/log-settings/profiles"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - log_settings_profiles
+
+- name: profiles_custom_url_category
+  vars:
+    snippet_file: "profiles_custom_url_category.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/custom-url-category"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_custom_url_category
+
+- name: profiles_decryption
+  vars:
+    snippet_file: "profiles_decryption.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/decryption"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_decryption
+
+- name: profiles_virus
+  vars:
+    snippet_file: "profiles_virus.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_virus
+
+- name: profiles_spyware
+  vars:
+    snippet_file: "profiles_spyware.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/spyware"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_spyware
+
+- name: profiles_vulnerability
+  vars:
+    snippet_file: "profiles_vulnerability.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/vulnerability"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_vulnerability
+
+- name: profiles_file_blocking
+  vars:
+    snippet_file: "profiles_file_blocking.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/file-blocking"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_file_blocking
+
+- name: profiles_url_filtering
+  vars:
+    snippet_file: "profiles_url_filtering.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_url_filtering
+
+- name: profiles_wildfire_analysis
+  vars:
+    snippet_file: "profiles_wildfire_analysis.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_wildfire_analysis
+
+- name: profile_group
+  vars:
+    snippet_file: "profile_group.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profile-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profile_group
+
+- name: default_security_rules
+  vars:
+    snippet_file: "rulebase_default_security_rules.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/default-security-rules"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - default_security_rules
+
+- name: security_rules
+  vars:
+    snippet_file: "rulebase_security.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - security_rules
+
+- name: decryption_rules
+  vars:
+    snippet_file: "rulebase_decryption.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/decryption"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - decryption_rules
+
+- name: zone_protection_profile
+  vars:
+    snippet_file: "zone_protection_profile.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - zone_protection_profile
+
+- name: reports
+  vars:
+    snippet_file: "reports_simple.xml"
+    snippet_xpath: "/config/shared/reports"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - reports
+
+- name: report_group_simple
+  vars:
+    snippet_file: "report_group_simple.xml"
+    snippet_xpath: "/config/shared/report-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - report_group_simple
+
+- name: email_scheduler_simple
+  vars:
+    snippet_file: "email_scheduler_simple.xml"
+    snippet_xpath: "/config/shared/email-scheduler"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - email_scheduler_simple

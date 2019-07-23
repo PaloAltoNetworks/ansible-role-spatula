@@ -1,0 +1,93 @@
+---
+# defaults file for spatula-panos
+
+# Panorama management interface config
+CONFIG_PANORAMA_IP: 'yes'
+
+# Panorama management IP type (panorama only)
+PANORAMA_TYPE: 'static'
+
+# Panorama hostname (panorama only)
+PANORAMA_NAME: 'panorama01'
+
+# Panorama IP (panorama only)
+PANORAMA_IP: '192.168.55.7'
+
+# Panorama netmask (panorama only)
+PANORAMA_MASK: '255.255.255.0'
+
+# Panorama default gateway (panorama only)
+PANORAMA_DG: '192.168.55.2'
+
+# IP address for scheduled config exports (panorama only)
+CONFIG_EXPORT_IP: '192.0.2.3'
+
+# Template stack for Panorama (panorama only)
+STACK: 'sample_stack'
+
+# Device-group name for Panorama (panorama only)
+DEVICE_GROUP: 'sample_devicegroup'
+
+# Firewall hostname
+FW_NAME: 'panos-01'
+
+# firewall management IP type
+MGMT_TYPE: 'dhcp-client'
+
+# NGFW management IP
+MGMT_IP: '192.0.2.6'
+
+# NGFW management netmask
+MGMT_MASK: '255.255.255.0'
+
+# NGFW management default gateway
+MGMT_DG: '192.0.2.7'
+
+# Network Time Protocol Server
+NTP_1: '0.pool.ntp.org'
+
+# Network Time Protocol Server 2
+NTP_2: '1.pool.ntp.org'
+
+# admin username
+ADMINISTRATOR_USERNAME: 'admin'
+
+# admin password
+ADMINISTRATOR_PASSWORD: 'admin'
+
+# primary dns server
+DNS_1: '8.8.8.8'
+
+# secondary dns server
+DNS_2: '8.8.4.4'
+
+# sinkhole address IPv4
+SINKHOLE_IPV4: '72.5.65.111'
+
+# sinkhole address IPv6
+SINKHOLE_IPV6: '2600:5200::1'
+
+#   
+INTERNET_ZONE: 'untrust'
+
+# email gateway address for critical alerts
+EMAIL_PROFILE_GATEWAY: '192.0.2.1'
+
+# from address in email alerts
+EMAIL_PROFILE_FROM: 'sentfrom@yourdomain.com'
+
+# to address in email alerts
+EMAIL_PROFILE_TO: 'sendto@yourdomain.com'
+
+# syslog server ip address
+SYSLOG_SERVER: '192.0.2.2'
+
+# lifetime for the api key in minutes
+API_KEY_LIFETIME: '525600'
+
+# option built into the templates to ignore the panw published external dynamic lists security rules
+# should ONLY be excluded based on licensing limitations outside of best practices
+# when 'yes' (default) will include the EDL rule
+
+# include the predefined Palo Alto Networks external lists security rules
+INCLUDE_PAN_EDL: 'yes'

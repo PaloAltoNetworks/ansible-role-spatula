@@ -1,0 +1,431 @@
+---
+# tasks file for spatula (panorama)
+
+- name: panorama_system
+  vars:
+    snippet_file: "panorama_system.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - panorama_system
+
+- name: panorama_setting
+  vars:
+    snippet_file: "panorama_setting.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - panorama_setting
+
+- name: panorama_log_settings
+  vars:
+    snippet_file: "panorama_log_settings.xml"
+    snippet_xpath: "/config/panorama/log-settings"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - panorama_log_settings
+
+- name: log_collector_group
+  vars:
+    snippet_file: "log_collector_group.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/log-collector-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - log_collector_group
+
+- name: shared_tag
+  vars:
+    snippet_file: "tag.xml"
+    snippet_xpath: "/config/shared/tag"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_tag
+
+- name: template
+  vars:
+    snippet_file: "template.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - template
+
+- name: device_system_shared
+  vars:
+    snippet_file: "device_system_shared.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_system_shared
+
+- name: device_setting
+  vars:
+    snippet_file: "device_setting.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_setting
+
+- name: device_mgt_config
+  vars:
+    snippet_file: "device_mgt_config.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/mgt-config"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_mgt_config
+
+- name: shared_log_settings
+  vars:
+    snippet_file: "shared_log_settings.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/shared/log-settings"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_log_settings
+
+- name: zone_protection_profile
+  vars:
+    snippet_file: "zone_protection_profile.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - zone_protection_profile
+
+- name: shared_address
+  vars:
+    snippet_file: "address.xml"
+    snippet_xpath: "/config/shared/address"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_address
+
+- name: shared_external_list
+  vars:
+    snippet_file: "external_list.xml"
+    snippet_xpath: "/config/shared/external-list"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_external_list
+
+- name: shared_log_profiles
+  vars:
+    snippet_file: "log_settings_profiles.xml"
+    snippet_xpath: "/config/shared/log-settings/profiles"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_log_profiles
+
+- name: shared_profiles_custom_url_category
+  vars:
+    snippet_file: "profiles_custom_url_category.xml"
+    snippet_xpath: "/config/shared/profiles/custom-url-category"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - shared_profiles_custom_url_category
+
+- name: profiles_decryption
+  vars:
+    snippet_file: "profiles_decryption.xml"
+    snippet_xpath: "/config/shared/profiles/decryption"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_decryption
+
+- name: profiles_virus
+  vars:
+    snippet_file: "profiles_virus.xml"
+    snippet_xpath: "/config/shared/profiles/virus"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_virus
+
+- name: profiles_spyware
+  vars:
+    snippet_file: "profiles_spyware.xml"
+    snippet_xpath: "/config/shared/profiles/spyware"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_spyware
+
+- name: profiles_vulnerability
+  vars:
+    snippet_file: "profiles_vulnerability.xml"
+    snippet_xpath: "/config/shared/profiles/vulnerability"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_vulnerability
+
+- name: profiles_file_blocking
+  vars:
+    snippet_file: "profiles_file_blocking.xml"
+    snippet_xpath: "/config/shared/profiles/file-blocking"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_file_blocking
+
+- name: profiles_url_filtering
+  vars:
+    snippet_file: "profiles_url_filtering.xml"
+    snippet_xpath: "/config/shared/profiles/url-filtering"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_url_filtering
+
+- name: profiles_wildfire_analysis
+  vars:
+    snippet_file: "profiles_wildfire_analysis.xml"
+    snippet_xpath: "/config/shared/profiles/wildfire-analysis"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profiles_wildfire_analysis
+
+- name: profile_group
+  vars:
+    snippet_file: "profile_group.xml"
+    snippet_xpath: "/config/shared/profile-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - profile_group
+
+- name: post_rulebase_default_security_rules
+  vars:
+    snippet_file: "post_rulebase_default_security_rules.xml"
+    snippet_xpath: "/config/shared/post-rulebase/default-security-rules"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - post_rulebase_default_security_rules
+
+- name: pre_rulebase_security
+  vars:
+    snippet_file: "pre_rulebase_security.xml"
+    snippet_xpath: "/config/shared/pre-rulebase/security"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - pre_rulebase_security
+
+- name: post_rulebase_decryption
+  vars:
+    snippet_file: "post_rulebase_decryption.xml"
+    snippet_xpath: "/config/shared/post-rulebase/decryption"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - post_rulebase_decryption
+
+- name: pre_rulebase_decryption
+  vars:
+    snippet_file: "pre_rulebase_decryption.xml"
+    snippet_xpath: "/config/shared/pre-rulebase/decryption"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - pre_rulebase_decryption
+
+- name: stack
+  vars:
+    snippet_file: "template_stack.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template-stack"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - stack
+
+- name: device_system_local
+  vars:
+    snippet_file: "device_system_local.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - device_system_local
+
+- name: devicegroup
+  vars:
+    snippet_file: "device_group.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - devicegroup
+
+- name: reports
+  vars:
+    snippet_file: "reports_simple.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/reports"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - reports
+
+- name: report_group_simple
+  vars:
+    snippet_file: "report_group_simple.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/report-group"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - report_group_simple
+
+- name: email_scheduler
+  vars:
+    snippet_file: "email_scheduler_simple.xml"
+    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/email-scheduler"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - email_scheduler

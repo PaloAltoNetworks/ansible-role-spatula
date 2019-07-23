@@ -1,0 +1,18 @@
+galaxy_info:
+  author: stealthllama
+  description: Applies security best practice templates to Palo Alto Networks devices
+  company: Palo Alto Networks
+  license: Apache-2.0
+  min_ansible_version: 2.6
+  platforms:
+    - name: PAN-OS
+      versions:
+      - 9.0
+      - 8.1
+      - 8.0
+  galaxy_tags:
+    - pan-os
+    - panorama
+
+dependencies:
+  - paloaltonetworks.paloaltonetworks
