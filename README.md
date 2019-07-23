@@ -18,8 +18,8 @@ Requirements
 This role utilizes the Python libraries listed below. All are available via [PyPI](https://pypi.org) and may be installed using the `pip` installer. The use of `virtualenv` is recommended in order to avoid system library conflicts.
 
 * [pandevice](https://pypi.org/project/pandevice/) - Framework for interacting with Palo Alto Networks devices via API
-* [pab-python](https://pypi.org/project/pan-python) - Multi-tool set for Palo Alto Networks PAN-OS, Panorama, WildFire and AutoFocus
-* [xmltodict](https://pypi.org/project/XML2Dict/) - Convert between XML String and Python Dict
+* [pan-python](https://pypi.org/project/pan-python) - Multi-tool set for Palo Alto Networks PAN-OS, Panorama, WildFire and AutoFocus
+* [xmltodict](https://pypi.org/project/XML2Dict/) - Convert between XML string and Python dict
 
 Role Variables
 --------------
