@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: spatula
   author: stealthllama
   description: Applies security best practice templates to Palo Alto Networks devices
   company: Palo Alto Networks
