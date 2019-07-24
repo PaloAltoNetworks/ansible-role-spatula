@@ -1,7 +1,7 @@
 ---
 # tasks file for spatula (panos)
     
-- name: device_system
+- name: System configuration
   vars:
     snippet_file: "device_system.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
@@ -14,7 +14,7 @@
   tags:
   - device_system
 
-- name: device_setting
+- name: Security-related device settings
   vars:
     snippet_file: "device_setting.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
@@ -27,7 +27,7 @@
   tags:
   - device_setting
 
-- name: device_mgt_config
+- name: Management settings
   vars:
     snippet_file: "device_mgt_config.xml"
     snippet_xpath: "/config/mgt-config"
@@ -40,7 +40,7 @@
   tags:
   - device_mgt_config
 
-- name: shared_log_settings
+- name: Device log settings
   vars:
     snippet_file: "shared_log_settings.xml"
     snippet_xpath: "/config/shared/log-settings"
@@ -53,7 +53,7 @@
   tags:
   - shared_log_settings
 
-- name: address
+- name: Address objects
   vars:
     snippet_file: "address.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address"
@@ -66,7 +66,7 @@
   tags:
   - address
 
-- name: external_list
+- name: External Dynamic Lists
   vars:
     snippet_file: "external_list.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list"
@@ -79,7 +79,7 @@
   tags:
   - external_list
 
-- name: tag
+- name: Tags
   vars:
     snippet_file: "tag.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag"
@@ -92,7 +92,7 @@
   tags:
   - tag
 
-- name: log_settings_profiles
+- name: Log forwarding profiles
   vars:
     snippet_file: "log_settings_profiles.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/log-settings/profiles"
@@ -105,7 +105,7 @@
   tags:
   - log_settings_profiles
 
-- name: profiles_custom_url_category
+- name: Custom URL categories
   vars:
     snippet_file: "profiles_custom_url_category.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/custom-url-category"
@@ -118,7 +118,7 @@
   tags:
   - profiles_custom_url_category
 
-- name: profiles_decryption
+- name: Description profiles
   vars:
     snippet_file: "profiles_decryption.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/decryption"
@@ -131,7 +131,7 @@
   tags:
   - profiles_decryption
 
-- name: profiles_virus
+- name: Anti-virus profiles
   vars:
     snippet_file: "profiles_virus.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus"
@@ -144,7 +144,7 @@
   tags:
   - profiles_virus
 
-- name: profiles_spyware
+- name: Anti-spyware profiles
   vars:
     snippet_file: "profiles_spyware.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/spyware"
@@ -157,7 +157,7 @@
   tags:
   - profiles_spyware
 
-- name: profiles_vulnerability
+- name: Vulnerability protection profiles
   vars:
     snippet_file: "profiles_vulnerability.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/vulnerability"
@@ -170,7 +170,7 @@
   tags:
   - profiles_vulnerability
 
-- name: profiles_file_blocking
+- name: File blocking profiles
   vars:
     snippet_file: "profiles_file_blocking.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/file-blocking"
@@ -183,7 +183,7 @@
   tags:
   - profiles_file_blocking
 
-- name: profiles_url_filtering
+- name: URL filtering profiles
   vars:
     snippet_file: "profiles_url_filtering.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering"
@@ -196,7 +196,7 @@
   tags:
   - profiles_url_filtering
 
-- name: profiles_wildfire_analysis
+- name: WildFire analysis profiles
   vars:
     snippet_file: "profiles_wildfire_analysis.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis"
@@ -209,7 +209,7 @@
   tags:
   - profiles_wildfire_analysis
 
-- name: profile_group
+- name: Security profile groups
   vars:
     snippet_file: "profile_group.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profile-group"
@@ -222,7 +222,7 @@
   tags:
   - profile_group
 
-- name: default_security_rules
+- name: Default security rules
   vars:
     snippet_file: "rulebase_default_security_rules.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/default-security-rules"
@@ -235,7 +235,7 @@
   tags:
   - default_security_rules
 
-- name: security_rules
+- name: Block security rules
   vars:
     snippet_file: "rulebase_security.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security"
@@ -248,7 +248,7 @@
   tags:
   - security_rules
 
-- name: decryption_rules
+- name: Decryption rules
   vars:
     snippet_file: "rulebase_decryption.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/decryption"
@@ -261,7 +261,7 @@
   tags:
   - decryption_rules
 
-- name: zone_protection_profile
+- name: Zone protection profiles
   vars:
     snippet_file: "zone_protection_profile.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile"
@@ -274,7 +274,7 @@
   tags:
   - zone_protection_profile
 
-- name: reports
+- name: Custom reports
   vars:
     snippet_file: "reports_simple.xml"
     snippet_xpath: "/config/shared/reports"
@@ -287,7 +287,7 @@
   tags:
   - reports
 
-- name: report_group_simple
+- name: Report groups
   vars:
     snippet_file: "report_group_simple.xml"
     snippet_xpath: "/config/shared/report-group"
@@ -300,7 +300,7 @@
   tags:
   - report_group_simple
 
-- name: email_scheduler_simple
+- name: Email scheduler
   vars:
     snippet_file: "email_scheduler_simple.xml"
     snippet_xpath: "/config/shared/email-scheduler"

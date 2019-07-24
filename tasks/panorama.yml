@@ -1,7 +1,7 @@
 ---
 # tasks file for spatula (panorama)
 
-- name: panorama_system
+- name: Panorama system configuration
   vars:
     snippet_file: "panorama_system.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
@@ -14,7 +14,7 @@
   tags:
   - panorama_system
 
-- name: panorama_setting
+- name: Panorama management settings
   vars:
     snippet_file: "panorama_setting.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
@@ -27,7 +27,7 @@
   tags:
   - panorama_setting
 
-- name: panorama_log_settings
+- name: Panorama log settings
   vars:
     snippet_file: "panorama_log_settings.xml"
     snippet_xpath: "/config/panorama/log-settings"
@@ -40,7 +40,7 @@
   tags:
   - panorama_log_settings
 
-- name: log_collector_group
+- name: Log collector groups
   vars:
     snippet_file: "log_collector_group.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/log-collector-group"
@@ -53,7 +53,7 @@
   tags:
   - log_collector_group
 
-- name: shared_tag
+- name: Shared tags
   vars:
     snippet_file: "tag.xml"
     snippet_xpath: "/config/shared/tag"
@@ -66,7 +66,7 @@
   tags:
   - shared_tag
 
-- name: template
+- name: Panorama template
   vars:
     snippet_file: "template.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template"
@@ -79,7 +79,7 @@
   tags:
   - template
 
-- name: device_system_shared
+- name: System configuration
   vars:
     snippet_file: "device_system_shared.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
@@ -92,7 +92,7 @@
   tags:
   - device_system_shared
 
-- name: device_setting
+- name: Security-related device settings
   vars:
     snippet_file: "device_setting.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting"
@@ -105,7 +105,7 @@
   tags:
   - device_setting
 
-- name: device_mgt_config
+- name: Device management configuration
   vars:
     snippet_file: "device_mgt_config.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/mgt-config"
@@ -118,7 +118,7 @@
   tags:
   - device_mgt_config
 
-- name: shared_log_settings
+- name: Device log settings
   vars:
     snippet_file: "shared_log_settings.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/shared/log-settings"
@@ -131,7 +131,7 @@
   tags:
   - shared_log_settings
 
-- name: zone_protection_profile
+- name: Zone protection profiles
   vars:
     snippet_file: "zone_protection_profile.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile"
@@ -144,7 +144,7 @@
   tags:
   - zone_protection_profile
 
-- name: shared_address
+- name: Address objects
   vars:
     snippet_file: "address.xml"
     snippet_xpath: "/config/shared/address"
@@ -157,7 +157,7 @@
   tags:
   - shared_address
 
-- name: shared_external_list
+- name: External Dynamic Lists
   vars:
     snippet_file: "external_list.xml"
     snippet_xpath: "/config/shared/external-list"
@@ -170,7 +170,7 @@
   tags:
   - shared_external_list
 
-- name: shared_log_profiles
+- name: Log forwarding profiles
   vars:
     snippet_file: "log_settings_profiles.xml"
     snippet_xpath: "/config/shared/log-settings/profiles"
@@ -183,7 +183,7 @@
   tags:
   - shared_log_profiles
 
-- name: shared_profiles_custom_url_category
+- name: Custom URL categories
   vars:
     snippet_file: "profiles_custom_url_category.xml"
     snippet_xpath: "/config/shared/profiles/custom-url-category"
@@ -196,7 +196,7 @@
   tags:
   - shared_profiles_custom_url_category
 
-- name: profiles_decryption
+- name: Decryption profiles
   vars:
     snippet_file: "profiles_decryption.xml"
     snippet_xpath: "/config/shared/profiles/decryption"
@@ -209,7 +209,7 @@
   tags:
   - profiles_decryption
 
-- name: profiles_virus
+- name: Anti-virus profiles
   vars:
     snippet_file: "profiles_virus.xml"
     snippet_xpath: "/config/shared/profiles/virus"
@@ -222,7 +222,7 @@
   tags:
   - profiles_virus
 
-- name: profiles_spyware
+- name: Anti-spyware profiles
   vars:
     snippet_file: "profiles_spyware.xml"
     snippet_xpath: "/config/shared/profiles/spyware"
@@ -235,7 +235,7 @@
   tags:
   - profiles_spyware
 
-- name: profiles_vulnerability
+- name: Vulnerability protection profiles
   vars:
     snippet_file: "profiles_vulnerability.xml"
     snippet_xpath: "/config/shared/profiles/vulnerability"
@@ -248,7 +248,7 @@
   tags:
   - profiles_vulnerability
 
-- name: profiles_file_blocking
+- name: File blocking profiles
   vars:
     snippet_file: "profiles_file_blocking.xml"
     snippet_xpath: "/config/shared/profiles/file-blocking"
@@ -261,7 +261,7 @@
   tags:
   - profiles_file_blocking
 
-- name: profiles_url_filtering
+- name: URL filtering profiles
   vars:
     snippet_file: "profiles_url_filtering.xml"
     snippet_xpath: "/config/shared/profiles/url-filtering"
@@ -274,7 +274,7 @@
   tags:
   - profiles_url_filtering
 
-- name: profiles_wildfire_analysis
+- name: WildFire analysis profiles
   vars:
     snippet_file: "profiles_wildfire_analysis.xml"
     snippet_xpath: "/config/shared/profiles/wildfire-analysis"
@@ -287,7 +287,7 @@
   tags:
   - profiles_wildfire_analysis
 
-- name: profile_group
+- name: Profile group
   vars:
     snippet_file: "profile_group.xml"
     snippet_xpath: "/config/shared/profile-group"
@@ -300,7 +300,7 @@
   tags:
   - profile_group
 
-- name: post_rulebase_default_security_rules
+- name: Default security post-rules
   vars:
     snippet_file: "post_rulebase_default_security_rules.xml"
     snippet_xpath: "/config/shared/post-rulebase/default-security-rules"
@@ -313,7 +313,7 @@
   tags:
   - post_rulebase_default_security_rules
 
-- name: pre_rulebase_security
+- name: Block security pre-rules
   vars:
     snippet_file: "pre_rulebase_security.xml"
     snippet_xpath: "/config/shared/pre-rulebase/security"
@@ -326,7 +326,7 @@
   tags:
   - pre_rulebase_security
 
-- name: post_rulebase_decryption
+- name: Decrpytion post-rules
   vars:
     snippet_file: "post_rulebase_decryption.xml"
     snippet_xpath: "/config/shared/post-rulebase/decryption"
@@ -339,7 +339,7 @@
   tags:
   - post_rulebase_decryption
 
-- name: pre_rulebase_decryption
+- name: Decryption pre-rules
   vars:
     snippet_file: "pre_rulebase_decryption.xml"
     snippet_xpath: "/config/shared/pre-rulebase/decryption"
@@ -352,7 +352,7 @@
   tags:
   - pre_rulebase_decryption
 
-- name: stack
+- name: Panorama template stack
   vars:
     snippet_file: "template_stack.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template-stack"
@@ -365,7 +365,7 @@
   tags:
   - stack
 
-- name: device_system_local
+- name: Device management interface
   vars:
     snippet_file: "device_system_local.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system"
@@ -378,7 +378,7 @@
   tags:
   - device_system_local
 
-- name: devicegroup
+- name: Device group
   vars:
     snippet_file: "device_group.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group"
@@ -391,7 +391,7 @@
   tags:
   - devicegroup
 
-- name: reports
+- name: Custom reports
   vars:
     snippet_file: "reports_simple.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/reports"
@@ -404,7 +404,7 @@
   tags:
   - reports
 
-- name: report_group_simple
+- name: Report groups
   vars:
     snippet_file: "report_group_simple.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/report-group"
@@ -417,7 +417,7 @@
   tags:
   - report_group_simple
 
-- name: email_scheduler
+- name: Email scheduler
   vars:
     snippet_file: "email_scheduler_simple.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/email-scheduler"

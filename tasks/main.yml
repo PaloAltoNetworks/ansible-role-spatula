@@ -12,6 +12,10 @@
 - name: Set the template path
   set_fact: 
     snippet_dir: 'files/templates/{{ device_type }}/snippets'
+  tags:
+  - always
 
 - name: Build task list
-  include_tasks: '{{ device_type }}.yml'
+  import_tasks: '{{ device_type }}.yml'
+  tags:
+  - always

@@ -20,6 +20,7 @@ This role utilizes the Python libraries listed below. All are available via [PyP
 * [pandevice](https://pypi.org/project/pandevice/) - Framework for interacting with Palo Alto Networks devices via API
 * [pan-python](https://pypi.org/project/pan-python) - Multi-tool set for Palo Alto Networks PAN-OS, Panorama, WildFire and AutoFocus
 * [xmltodict](https://pypi.org/project/XML2Dict/) - Convert between XML string and Python dict
+* [passlib](https://pypi.org/project/passlib) - Comprehensive password hashing framework supporting over 30 schemes
 
 Role Variables
 --------------
