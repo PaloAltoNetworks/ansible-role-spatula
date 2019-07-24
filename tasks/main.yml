@@ -17,5 +17,4 @@
 
 - name: Build task list
   import_tasks: '{{ device_type }}.yml'
-  tags:
-  - always
+  
