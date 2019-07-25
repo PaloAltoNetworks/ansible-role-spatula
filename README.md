@@ -103,7 +103,7 @@ The following are examples of Ansible playbooks that leverage this role to apply
     - panorama_vars.yml
       
   roles:
-    - role: stealthllama.spatula
+    - role: PaloAltoNetworks.spatula
 ```
 
 *Firewall:*
@@ -125,7 +125,7 @@ The following are examples of Ansible playbooks that leverage this role to apply
     - fw_vars.yml
       
   roles:
-    - role: stealthllama.spatula
+    - role: PaloAltoNetworks.spatula
 ```
 
 License
