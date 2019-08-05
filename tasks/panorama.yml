@@ -27,6 +27,32 @@
   tags:
   - panorama_setting
 
+- name: Panorama administrator
+  vars:
+    snippet_file: "panorama_mgt_config_users.xml"
+    snippet_xpath: "/config/mgt-config/users"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - panorama_mgt_config_users
+
+- name: Password complexity profile
+  vars:
+    snippet_file: "panorama_mgt_config_pwd.xml"
+    snippet_xpath: "/config/mgt-config/password-complexity"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - panorama_mgt_config_pwd
+
 - name: Panorama log settings
   vars:
     snippet_file: "panorama_log_settings.xml"
@@ -157,19 +183,6 @@
   tags:
   - shared_address
 
-- name: External Dynamic Lists
-  vars:
-    snippet_file: "external_list.xml"
-    snippet_xpath: "/config/shared/external-list"
-    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
-  panos_type_cmd:
-    provider: '{{ credentials }}'
-    cmd: 'set'
-    xpath: '{{ snippet_xpath }}'
-    element: '{{ snippet_xml }}'
-  tags:
-  - shared_external_list
-
 - name: Log forwarding profiles
   vars:
     snippet_file: "log_settings_profiles.xml"
@@ -287,7 +300,7 @@
   tags:
   - profiles_wildfire_analysis
 
-- name: Profile group
+- name: Security profile group
   vars:
     snippet_file: "profile_group.xml"
     snippet_xpath: "/config/shared/profile-group"
@@ -326,7 +339,7 @@
   tags:
   - pre_rulebase_security
 
-- name: Decrpytion post-rules
+- name: Decryption post-rules
   vars:
     snippet_file: "post_rulebase_decryption.xml"
     snippet_xpath: "/config/shared/post-rulebase/decryption"

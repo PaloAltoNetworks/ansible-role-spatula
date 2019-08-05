@@ -35,7 +35,7 @@ STACK: 'sample_stack'
 DEVICE_GROUP: 'sample_devicegroup'
 
 # Firewall hostname
-FW_NAME: 'panos-01'
+FW_NAME: 'sample'
 
 # firewall management IP type
 MGMT_TYPE: 'dhcp-client'
@@ -68,13 +68,10 @@ DNS_1: '8.8.8.8'
 DNS_2: '8.8.4.4'
 
 # sinkhole address IPv4
-SINKHOLE_IPV4: '72.5.65.111'
+SINKHOLE_IPV4: 'sinkhole.paloaltonetworks.com'
 
 # sinkhole address IPv6
 SINKHOLE_IPV6: '2600:5200::1'
-
-#   
-INTERNET_ZONE: 'untrust'
 
 # email gateway address for critical alerts
 EMAIL_PROFILE_GATEWAY: '192.0.2.1'
@@ -96,4 +93,4 @@ API_KEY_LIFETIME: '525600'
 # when 'yes' (default) will include the EDL rule
 
 # include the predefined Palo Alto Networks external lists security rules
-INCLUDE_PAN_EDL: 'yes'
+INCLUDE_PAN_EDL: 'no'

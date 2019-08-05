@@ -27,10 +27,10 @@
   tags:
   - device_setting
 
-- name: Management settings
+- name: Firewall administrator
   vars:
-    snippet_file: "device_mgt_config.xml"
-    snippet_xpath: "/config/mgt-config"
+    snippet_file: "mgt_config_users.xml"
+    snippet_xpath: "/config/mgt-config/users"
     snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
   panos_type_cmd:
     provider: '{{ credentials }}'
@@ -38,7 +38,20 @@
     xpath: '{{ snippet_xpath }}'
     element: '{{ snippet_xml }}'
   tags:
-  - device_mgt_config
+  - mgt_config_users
+
+- name: Password complexity profile
+  vars:
+    snippet_file: "password_complexity.xml"
+    snippet_xpath: "/config/mgt-config/password-complexity"
+    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
+  panos_type_cmd:
+    provider: '{{ credentials }}'
+    cmd: 'set'
+    xpath: '{{ snippet_xpath }}'
+    element: '{{ snippet_xml }}'
+  tags:
+  - password_complexity
 
 - name: Device log settings
   vars:
@@ -65,19 +78,6 @@
     element: '{{ snippet_xml }}'
   tags:
   - address
-
-- name: External Dynamic Lists
-  vars:
-    snippet_file: "external_list.xml"
-    snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list"
-    snippet_xml: "{{ lookup('template', '{{ snippet_dir }}/{{ snippet_file }}') }}"
-  panos_type_cmd:
-    provider: '{{ credentials }}'
-    cmd: 'set'
-    xpath: '{{ snippet_xpath }}'
-    element: '{{ snippet_xml }}'
-  tags:
-  - external_list
 
 - name: Tags
   vars:
@@ -118,7 +118,7 @@
   tags:
   - profiles_custom_url_category
 
-- name: Description profiles
+- name: Decryption profiles
   vars:
     snippet_file: "profiles_decryption.xml"
     snippet_xpath: "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/decryption"
